@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+	<head lang="en">
+    <meta charset="UTF-8">
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <title>AJAX</title>
+	</head>
+	<body>
+		<span id="ajax_test">Click me!</span> <br/>
+		<script>
+			$("#ajax_test").click(function(){
+				$.get('script.php', function(data) {
+					$('body').append(data);
+				})
+			});
+			$(document).ready(function() {
+				$("#ajax_test").click(function() {
+				alert("Ошибка! Без веб-сервера результат PHP-скрипта не отображается");
+				});
+			}); 
+		</script>
+	</body>
+</html>
